@@ -649,12 +649,14 @@ export default function App() {
                       <path d="M 155 15 Q 145 70 155 125" fill="none" stroke="#a855f7" strokeWidth="3" />
                       <line x1="140" y1="15" x2="160" y2="15" stroke="#a855f7" strokeWidth="3" />
                       <line x1="140" y1="125" x2="160" y2="125" stroke="#a855f7" strokeWidth="3" />
-                      {/* Incident and refracted rays */}
-                      <path d="M 20 35 L 150 35 L 280 15" fill="none" stroke="#ef4444" strokeWidth="1.5" />
-                      <path d="M 20 105 L 150 105 L 280 125" fill="none" stroke="#ef4444" strokeWidth="1.5" />
-                      {/* Dashed virtual focus extension */}
-                      <path d="M 80 70 L 150 35" stroke="#e2e8f0" strokeDasharray="3 3" strokeWidth="1" />
-                      <path d="M 80 70 L 150 105" stroke="#e2e8f0" strokeDasharray="3 3" strokeWidth="1" />
+                      {/* Incident rays (parallel, y=48 and y=92) then refracted collinear with F */}
+                      {/* Top: lens hit (150,48), slope=(48-70)/(150-80)=-22/70; at x=280: y≈7 */}
+                      <path d="M 20 48 L 150 48 L 280 7" fill="none" stroke="#ef4444" strokeWidth="1.5" />
+                      {/* Bottom: lens hit (150,92), slope=(92-70)/(150-80)=+22/70; at x=280: y≈133 */}
+                      <path d="M 20 92 L 150 92 L 280 133" fill="none" stroke="#ef4444" strokeWidth="1.5" />
+                      {/* Dashed virtual focus extension – collinear with refracted rays above */}
+                      <path d="M 150 48 L 80 70" stroke="#e2e8f0" strokeDasharray="3 3" strokeWidth="1" />
+                      <path d="M 150 92 L 80 70" stroke="#e2e8f0" strokeDasharray="3 3" strokeWidth="1" />
                       <circle cx="80" cy="70" r="3" fill="#a855f7" />
                       <text x="80" y="60" fill="#a855f7" fontSize="11" textAnchor="middle">F</text>
                     </svg>
