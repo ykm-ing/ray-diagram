@@ -1179,7 +1179,7 @@ export default function App() {
 
                     {/* Target Image (Revealed only when drill is verified successfully) */}
                     {isDrillSuccess && (
-                      <g className="animate-bounce">
+                      <g>
                         <line 
                           x1={drillParams.imageX} 
                           y1="200" 
@@ -1199,7 +1199,7 @@ export default function App() {
                           fill="#10b981" 
                           fontSize="13" 
                           textAnchor="middle" 
-                          className="font-bold animate-pulse"
+                          className="font-bold"
                         >
                           {activeTrans.drillSec.successTitle}
                         </text>
